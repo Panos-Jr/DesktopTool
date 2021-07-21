@@ -1,4 +1,4 @@
-::Made by Tom Harrison
+::Made by TopperTom
 @echo off
 color 0a
 title DESKTOPTOOL
@@ -175,5 +175,5 @@ del %a%
 pause
 cls
 
-::Made by Tom Harrison
+::Made by TopperTom
                     
