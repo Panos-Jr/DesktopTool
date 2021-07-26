@@ -1,4 +1,4 @@
-::Made by TopperTom
+::Made by TopperTom and Edited by: PanosJr
 @echo off
 color 0a
 title DESKTOPTOOL
@@ -47,7 +47,10 @@ echo         .+hmMMMNds-
 echo                         CREATED BY: TOM HARRISON                           
 pause
 cls
-echo Hello, %username%
+echo Hello, %username%!
+pause 
+cls
+echo CD: %cd%
 pause 
 cls 
 
@@ -67,7 +70,7 @@ echo OPENER CANCELED!.
 )
 :yopenf
 if %a% == y (
-echo GETTING REDDY TO OPEN FILE OR FOLDER!.
+echo GETTING READY TO OPEN FILE OR FOLDER!.
 timeout /t 02 /NOBREAK >nul 
 goto opent
 ) 
@@ -84,7 +87,7 @@ echo CREATOR CANCELED!.
 )
 :ycreatef
 if %a% == y (
-echo GETTING REDDY TO CREATE FILE OR FOLDER!.
+echo GETTING READY TO CREATE FILE OR FOLDER!.
 timeout /t 02 /NOBREAK >nul 
 goto :createt
 ) 
@@ -103,11 +106,11 @@ echo y=yes n=no
 set /p "a=TYPEHERE: "
 :Ndeletef
 if %a% == n (
-echo DELETER CANCELED!.
+echo Abort.
 )
 :ydeletef
 if %a% == y (
-echo GETTING REDDY TO DELETE THE FILE OR FOLDER!.
+echo GETTING READY TO DELETE THE FILE OR FOLDER!.
 timeout /t 02 /NOBREAK >nul 
 goto deletet
 ) 
@@ -116,7 +119,7 @@ cls
 exit
 
 :opent
-echo please type name and file extention of file or folder
+echo please type name and file extention of file or folder:
 set /p "a=TYPEHERE: "
 start %a%
 pause
@@ -127,12 +130,12 @@ goto createf
 echo t=file f=folder
 set /p "b=TYPEHERE: "
 if %b% == t (
-echo GETTING REDDY TO CREATE FILE!.
+echo GETTING READY TO CREATE FILE!.
 timeout /t 02 /NOBREAK >nul
 goto createp
 )
 if %b% == f (
-echo GETTING REDDY TO CREATE FOLDER!.
+echo GETTING READY TO CREATE FOLDER!.
 timeout /t 02 /NOBREAK >nul 
 )
 echo please type name of folder
@@ -145,6 +148,13 @@ goto list2
 :createp
 echo please type name of file and file extention
 set /p "a=TYPEHERE: "
+pause
+cls
+echo INPUT the location of the file -> e.g., 'C:\Users\User\Desktop' - don't include sigle-quoted speech marks. 
+echo Do NOT include the file as part of the location. 
+echo.
+set /p "file=Type Here> " 
+cd "%file%"
 fsutil file createnew %a% 0
 pause
 cls
@@ -154,12 +164,12 @@ goto list2
 echo t=file f=folder
 set /p "b=TYPEHERE: "
 if %b% == t (
-echo GETTING REDDY TO DELETE FILE!.
+echo GETTING READY TO DELETE FILE!.
 timeout /t 02 /NOBREAK >nul
 goto
 )
 if %b% == f (
-echo GETTING REDDY TO CREATE FOLDER!.
+echo GETTING READY TO CREATE FOLDER!.
 timeout /t 02 /NOBREAK >nul 
 )
 echo please type name of folder
@@ -169,11 +179,11 @@ pause
 exit
 
 :deletep
-echo please type name of file
+echo please type name of file (and extension)
 set /p "a=TYPEHERE: "
 del %a% 
 pause
 cls
 
-::Made by TopperTom
+::Made by TopperTom and Edited by: PanosJr
                     
