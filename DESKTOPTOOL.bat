@@ -47,7 +47,7 @@ echo         .+hmMMMNds-
 echo                         CREATED BY: TOM HARRISON                           
 pause
 cls
-echo Hello, %username%
+echo Hello, %username%!
 pause 
 cls 
 
@@ -63,11 +63,11 @@ echo y=yes n=no
 set /p "a=TYPEHERE: "
 :ndeletef
 if %a% == n (
-echo OPENER CANCELED!.
+echo Abort!.
 )
 :yopenf
 if %a% == y (
-echo GETTING REDDY TO OPEN FILE OR FOLDER!.
+echo GETTING READY TO OPEN FILE OR FOLDER!.
 timeout /t 02 /NOBREAK >nul 
 goto opent
 ) 
@@ -80,11 +80,11 @@ echo y=yes n=no
 set /p "a=TYPEHERE: "
 :No create file
 if %a% == n (
-echo CREATOR CANCELED!.
+echo Abort!.
 )
 :ycreatef
 if %a% == y (
-echo GETTING REDDY TO CREATE FILE OR FOLDER!.
+echo GETTING READY TO CREATE FILE OR FOLDER!.
 timeout /t 02 /NOBREAK >nul 
 goto :createt
 ) 
@@ -103,11 +103,11 @@ echo y=yes n=no
 set /p "a=TYPEHERE: "
 :Ndeletef
 if %a% == n (
-echo DELETER CANCELED!.
+echo Abort!.
 )
 :ydeletef
 if %a% == y (
-echo GETTING REDDY TO DELETE THE FILE OR FOLDER!.
+echo GETTING READY TO DELETE THE FILE OR FOLDER!.
 timeout /t 02 /NOBREAK >nul 
 goto deletet
 ) 
@@ -154,12 +154,12 @@ goto list2
 echo t=file f=folder
 set /p "b=TYPEHERE: "
 if %b% == t (
-echo GETTING REDDY TO DELETE FILE!.
+echo GETTING READY TO DELETE FILE!.
 timeout /t 02 /NOBREAK >nul
 goto
 )
 if %b% == f (
-echo GETTING REDDY TO CREATE FOLDER!.
+echo GETTING READY TO CREATE FOLDER!.
 timeout /t 02 /NOBREAK >nul 
 )
 echo please type name of folder
@@ -175,5 +175,4 @@ del %a%
 pause
 cls
 
-::Made by TopperTom
-                    
+::Made by TopperTom                  
