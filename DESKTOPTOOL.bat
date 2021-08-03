@@ -1,4 +1,4 @@
-::Made by TopperTom and Edited by: PanosJr
+::Made by TopperTom and Panos-Jr
 @echo off
 color 0a
 title DESKTOPTOOL
@@ -44,7 +44,7 @@ echo      `dMMMMMMMMMMMMMMd:
 echo       `sMMMMMMMMMMMd:                                                                              
 echo         .+hmMMMNds-                                                                                
                                                                                                                                                                                                                                                                                                                                                                     
-echo                         CREATED BY: TOM HARRISON                           
+echo                         CREATED BY: TOM HARRISON and PANOS-JR                          
 pause
 cls
 echo Hello, %username%!
@@ -55,18 +55,18 @@ pause
 cls 
 
 :list
-echo listing files on desktop
+echo Listing files on %userprofile%\Desktop...
 timeout /t 02 /NOBREAK >nul 
 cd "%userprofile%\desktop"
 dir 
 
 :openf
 echo Would you like to open a a file or folder?
-echo y=yes n=no
-set /p "a=TYPEHERE: "
+echo type yes or no
+set /p "a=y=TYPE HERE: "
 :ndeletef
-if %a% == n (
-echo OPENER CANCELED!.
+if %a% == no (
+echo Abort.
 )
 :yopenf
 if %a% == y (
@@ -83,7 +83,7 @@ echo y=yes n=no
 set /p "a=TYPEHERE: "
 :No create file
 if %a% == n (
-echo CREATOR CANCELED!.
+echo Abort.
 )
 :ycreatef
 if %a% == y (
@@ -155,7 +155,12 @@ echo Do NOT include the file as part of the location.
 echo.
 set /p "file=Type Here> " 
 cd "%file%"
-fsutil file createnew %a% 0
+pause 
+cls 
+
+echo Type the name and extension of the file: 
+set /p "val=Type HERE> "
+cd.> "%val%"
 pause
 cls
 goto list2
@@ -185,5 +190,5 @@ del %a%
 pause
 cls
 
-::Made by TopperTom and Edited by: PanosJr
+::Made by TopperTom and Panos-Jr
                     
