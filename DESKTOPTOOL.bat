@@ -95,7 +95,7 @@ pause
 cls
 
 :list2
-echo listing files on desktop
+echo Listing files on %userprofile%\Desktop...
 timeout /t 02 /NOBREAK >nul 
 cd "%userprofile%\desktop"
 dir 
@@ -146,10 +146,6 @@ cls
 goto list2
 
 :createp
-echo please type name of file and file extention
-set /p "a=TYPEHERE: "
-pause
-cls
 echo INPUT the location of the file -> e.g., 'C:\Users\User\Desktop' - don't include sigle-quoted speech marks. 
 echo Do NOT include the file as part of the location. 
 echo.
