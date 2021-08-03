@@ -1,6 +1,6 @@
 ::Made by TopperTom and Panos-Jr.
 @echo off
-color 0a
+color 0f
 title DESKTOPTOOL
 
 echo                                                `:+syhddddhhso/-`                                   
