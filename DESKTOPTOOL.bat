@@ -59,6 +59,7 @@ echo Listing files on %userprofile%\Desktop...
 timeout /t 02 /NOBREAK >nul 
 cd "%userprofile%\desktop"
 dir 
+pause
 
 :openf
 echo Would you like to open a a file or folder?
@@ -67,17 +68,25 @@ set /p "a=y=TYPE HERE: "
 :ndeletef
 if %a% == no (
 echo Abort.
-if %a% == n (
-echo Abort!.
-)
-:yopenf
-if %a% == y (
-echo GETTING READY TO OPEN FILE OR FOLDER!.
-timeout /t 02 /NOBREAK >nul 
-goto opent
-) 
-pause
+pause 
 cls
+goto createf 
+) else if %a% == yes (
+pause 
+cls
+) else (
+echo Invalid.
+pause 
+cls
+goto openf 
+)
+
+:yopenf
+echo GETTING READY TO OPEN FILE OR FOLDER!.
+timeout /t 02 /NOBREAK >nul
+cls
+goto opent
+
 
 :createf
 echo Would you like to create a file or folder?
@@ -86,21 +95,23 @@ set /p "a=TYPEHERE: "
 :No create file
 if %a% == n (
 echo Abort.
-)
-:ycreatef
-if %a% == y (
+) else if %a% == y (
 echo GETTING READY TO CREATE FILE OR FOLDER!.
 timeout /t 02 /NOBREAK >nul 
 goto :createt
-) 
-pause
+) else (
+echo Invalid.
+pause 
 cls
+goto createf
+)
 
 :list2
 echo Listing files on %userprofile%\Desktop...
 timeout /t 02 /NOBREAK >nul 
 cd "%userprofile%\desktop"
 dir 
+pause 
 
 :deletef
 echo Would you like to delete a file or folder?
@@ -109,16 +120,16 @@ set /p "a=TYPEHERE: "
 :Ndeletef
 if %a% == n (
 echo Abort.
-)
-:ydeletef
-if %a% == y (
+) else if %a% == y (
 echo GETTING READY TO DELETE THE FILE OR FOLDER!.
 timeout /t 02 /NOBREAK >nul 
 goto deletet
-) 
-pause
+) else (
+echo Invalid.
+pause 
 cls
-exit
+goto deletef
+)
 
 :opent
 echo please type name and file extention of file or folder:
@@ -135,11 +146,16 @@ if %b% == t (
 echo GETTING READY TO CREATE FILE!.
 timeout /t 02 /NOBREAK >nul
 goto createp
-)
-if %b% == f (
+) else if %b% == f (
 echo GETTING READY TO CREATE FOLDER!.
 timeout /t 02 /NOBREAK >nul 
+) else (
+echo Invalid.
+pause
+cls
+goto createt
 )
+
 echo please type name of folder
 set /p "a=TYPEHERE: "
 mkdir %a%
@@ -169,12 +185,17 @@ set /p "b=TYPEHERE: "
 if %b% == t (
 echo GETTING READY TO DELETE FILE!.
 timeout /t 02 /NOBREAK >nul
-goto
-)
-if %b% == f (
+goto deletep
+) else if %b% == f (
 echo GETTING READY TO CREATE FOLDER!.
 timeout /t 02 /NOBREAK >nul 
+) else (
+echo Invalid.
+pause 
+cls
+goto deletet
 )
+
 echo please type name of folder
 set /p "a=TYPEHERE: "
 rmdir %a%
