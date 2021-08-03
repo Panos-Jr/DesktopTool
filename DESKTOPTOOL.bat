@@ -1,4 +1,4 @@
-::Made by TopperTom and Panos-Jr
+::Made by TopperTom and Panos-Jr.
 @echo off
 color 0a
 title DESKTOPTOOL
