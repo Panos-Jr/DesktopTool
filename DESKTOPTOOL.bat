@@ -67,6 +67,8 @@ set /p "a=y=TYPE HERE: "
 :ndeletef
 if %a% == no (
 echo Abort.
+if %a% == n (
+echo Abort!.
 )
 :yopenf
 if %a% == y (
@@ -187,4 +189,3 @@ pause
 cls
 
 ::Made by TopperTom and Panos-Jr
-                    
