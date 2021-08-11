@@ -54,7 +54,7 @@ cls
 :list
 echo listing files on desktop
 timeout /t 02 /NOBREAK >nul 
-cd "%userprofile%\desktop"
+cd "%userprofile%\Desktop"
 dir 
 
 :openf
