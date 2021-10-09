@@ -43,7 +43,8 @@ echo      /MMMMMMMMMMMMMMMMMd:
 echo      `dMMMMMMMMMMMMMMd:                                                                            
 echo       `sMMMMMMMMMMMd:                                                                              
 echo         .+hmMMMNds-                                                                                
-                                                                                                                                                                                                                                                                                                                                                                    
+
+echo - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   
 echo                         CREATED BY: TOM HARRISON and PANOS-JR                          
 pause
 cls
@@ -82,7 +83,7 @@ goto openf
 )
 
 :yopenf
-echo GETTING READY TO OPEN FILE OR FOLDER!.
+echo GETTING READY TO OPEN FILE OR FOLDER!
 timeout /t 02 /NOBREAK >nul
 cls
 goto opent
@@ -91,7 +92,7 @@ goto opent
 :createf
 echo Would you like to create a file or folder?
 echo y=yes n=no
-set /p "a=TYPEHERE: "
+set /p "a=TYPE HERE: "
 :No create file
 if %a% == n (
 echo Abort.
@@ -116,7 +117,7 @@ pause
 :deletef
 echo Would you like to delete a file or folder?
 echo y=yes n=no
-set /p "a=TYPEHERE: "
+set /p "a=TYPE HERE: "
 :Ndeletef
 if %a% == n (
 echo Abort.
@@ -132,8 +133,8 @@ goto deletef
 )
 
 :opent
-echo please type name and file extention of file or folder:
-set /p "a=TYPEHERE: "
+echo Please type name and file extention of file or folder:
+set /p "a=TYPE HERE: "
 start %a%
 pause
 cls
@@ -141,7 +142,7 @@ goto createf
 
 :createt
 echo t=file f=folder
-set /p "b=TYPEHERE: "
+set /p "b=TYPE HERE: "
 if %b% == t (
 echo GETTING READY TO CREATE FILE!.
 timeout /t 02 /NOBREAK >nul
@@ -157,7 +158,7 @@ goto createt
 )
 
 echo please type name of folder
-set /p "a=TYPEHERE: "
+set /p "a=TYPE HERE: "
 mkdir %a%
 pause
 cls
@@ -181,7 +182,7 @@ goto list2
 
 :deletet
 echo t=file f=folder
-set /p "b=TYPEHERE: "
+set /p "b=TYPE HERE: "
 if %b% == t (
 echo GETTING READY TO DELETE FILE!.
 timeout /t 02 /NOBREAK >nul
@@ -196,15 +197,15 @@ cls
 goto deletet
 )
 
-echo please type name of folder
-set /p "a=TYPEHERE: "
+echo Please type name of folder
+set /p "a=TYPE HERE: "
 rmdir %a%
 pause
 exit
 
 :deletep
-echo please type name of file (and extension)
-set /p "a=TYPEHERE: "
+echo Please type name of file (and extension)
+set /p "a=TYPE HERE: "
 del %a% 
 pause
 cls
