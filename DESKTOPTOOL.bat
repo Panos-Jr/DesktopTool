@@ -55,7 +55,7 @@ cls
 echo listing files on desktop
 timeout /t 02 /NOBREAK >nul 
 cd "%userprofile%\Desktop"
-dir 
+dir /p /q
 
 :openf
 echo Would you like to open a a file or folder?
