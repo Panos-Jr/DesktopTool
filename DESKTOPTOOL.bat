@@ -204,7 +204,7 @@ pause
 exit
 
 :deletep
-echo Please type name of file (and extension)
+echo Please type name of file (and extension):
 set /p "a=TYPE HERE: "
 del %a% 
 pause
