@@ -58,7 +58,7 @@ cls
 echo Listing files on %userprofile%\Desktop...
 timeout /t 02 /NOBREAK >nul 
 cd "%userprofile%\desktop"
-dir 
+dir /p /q 
 pause
 
 :openf
