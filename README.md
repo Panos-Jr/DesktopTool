@@ -1,2 +1,3 @@
 # DesktopTool
-A tool to help desktop speed
+A batch file 
+to help edit the desktop 
